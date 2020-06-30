@@ -1,17 +1,19 @@
+import 'package:falteknesi/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'drawerScreen.dart';
-import 'homeScreen.dart';
 
-class HomePage extends StatelessWidget {
+void main() => runApp(SMyApp());
+
+class SMyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          DrawerScreen(),
-          HomeScreen(),
-        ],
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
+      home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

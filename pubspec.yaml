@@ -46,6 +46,7 @@ flutter:
    - assets/logos/google.jpg
    - assets/images/cat.png
    - assets/images/horse.png
+   - images/
 
 
   fonts:
