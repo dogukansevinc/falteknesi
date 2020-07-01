@@ -1,5 +1,7 @@
 import 'package:falteknesi/models/chat_page.dart';
+import 'package:falteknesi/pages/detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Chat extends StatefulWidget {
   @override
@@ -114,12 +116,20 @@ class _ChatState extends State<Chat> {
               padding: EdgeInsets.only(left: 16, right: 16),
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return ChatPage(
-                  text: text[index],
-                  secondaryText: secondaryText[index],
-                  image: images[index],
-                  time: time[index],
-                  isMessageSent: (index == 2 || index == 5) ? true : false,
+                return ListTile(
+                  title: Text(text[index]),
+                  subtitle: Text(secondaryText[index]),
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://cdn.pixabay.com/photo/2020/06/28/00/04/chicago-5347435_960_720.jpg'),
+                  ),
+                  trailing: Text(time[index]),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DetailPage()),
+                    );
+                  },
                 );
               },
             )
