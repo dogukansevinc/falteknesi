@@ -1,3 +1,4 @@
+import 'package:falteknesi/pages/settingspage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -77,7 +78,12 @@ class _ProfileState extends State<Profile> {
           Padding(
             padding: EdgeInsets.only(right: 20),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
               child: Icon(Icons.settings),
             ),
           ),
